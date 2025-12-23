@@ -1,8 +1,8 @@
 BMIIndex = {
     "UnderWeight": 18.5, #Below this is UnderWeight
-    "Normal": 24.9, #Below this but above 18.5 is Normal
-    "OverWeight": 29.9, #Below this but above 24.9 is OverWeight
-    "Obese": 34.9, #Below this but above 29.9 is Obese
+    "Normal": 24.9, #Below this and above 18.5 is Normal
+    "OverWeight": 29.9, #Below this and above 24.9 is OverWeight
+    "Obese": 34.9, #Below this and above 29.9 is Obese
     "Extremely_Obese": 35 #Above this is Extremely Obese
 }
 
