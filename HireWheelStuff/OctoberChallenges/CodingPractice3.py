@@ -8,4 +8,5 @@ print("Hello, welcome to the Unique Characters checker, \n This will check if al
 
 UserInput = input("Type in your characters:")
 
+
 UniqueWordChecker(UserInput)
