@@ -22,4 +22,4 @@ def MainMenu():
 MainMenu()
         
 
-    
+print("test")
