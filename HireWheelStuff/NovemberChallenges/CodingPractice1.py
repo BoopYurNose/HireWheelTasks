@@ -1,22 +1,19 @@
-'''Challenge Overview
-Generate an acronym by taking the first letter of each word in a phrase and returning the uppercase result.
-
-Prompt the user for a phrase or sentence.
-Split the phrase into words (ignore blank segments or punctuation).
-Collect the first letter of each word, uppercase it, and join into the final acronym.
-Handle edge cases such as empty input or single-word phrases gracefully.'''
 
 def CreateAcronym(UserPhrase):
     Acronym = (UserPhrase[0:1]) # first letter in the users phrase input
-    print(Acronym) #Testing to see if the string sliced the first character in the users input
+    #print(Acronym) #Testing to see if the string sliced the first character in the users input
     IndexValue = 0
+    NextLetter = ""
     for Letters in UserPhrase:
         IndexValue = IndexValue + 1
         
         #print(IndexValue)
         if " " in Letters:
-            NextLetter = (UserPhrase[0:IndexValue+1])
-            print(NextLetter)
+            NextLetter += (UserPhrase[IndexValue-1:IndexValue+1])
+            
+    FullAcronym = Acronym + NextLetter
+    FullAcronym = FullAcronym.upper()
+    print(f"Here is your acronym, enjoy: {FullAcronym}")
 
 
 def UserStart():
