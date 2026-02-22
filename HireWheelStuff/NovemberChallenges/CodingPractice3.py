@@ -9,7 +9,7 @@ def WordChecker(Phrase):
     Iterator = 0
     for Character in Phrase:
         if " " in Character:
-            print(f"This word is {WordCharCount} Checking next word")
+            print(f"This word is {WordCharCount} characters long Checking next word")
             StartIndex = WordIndex - WordCharCount
             #print(StartIndex)
             #print(WordCharCount)
@@ -74,14 +74,13 @@ def StartInput():
     
     if not UserInput:
         print("\nTry again you need to type in something!")
-        #StartInput()
+        StartInput()
         return
     for Character in UserInput:
         if Character.isnumeric():
             print("\nYou canot have numbers in your input, try again")
-            #StartInput()
+            StartInput()
             return
     WordChecker(UserInput)
-# Temporarily hard coded as a variable since the website compiler at school doesn't allow normally this will be a input()
 
 StartInput()
