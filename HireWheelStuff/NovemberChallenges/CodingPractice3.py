@@ -1,15 +1,6 @@
-'''Analyze a sentence and return the first longest word that appears.
-
-Accept a sentence or phrase as input.
-Normalize punctuation so words can be compared consistently.
-Track the longest word length; if there is a tie, keep the first occurrence.
-Return or print the longest word (optionally include its length)'''
-
 WordLengthData = {}
 
-'''for i in range(0, 100):
-    print(i)
-    WordLengthData[i] = "Test"'''
+
 
 def WordChecker(Phrase):
     WordCharCount = 0
@@ -23,7 +14,7 @@ def WordChecker(Phrase):
             #print(StartIndex)
             #print(WordCharCount)
             WordFound = (Phrase[StartIndex:WordEndIndex])
-            print(Iterator)
+            print(f"Iteration: {Iterator}")
             WordLengthData[Iterator] = WordFound ,WordCharCount
             WordCharCount = -1
             Iterator += 1
@@ -41,18 +32,40 @@ def WordChecker(Phrase):
     Largest = 0
 
     for Key, Values in WordLengthData.items():
+        #print(Key, Values)
         for Val in Values:
             if isinstance(Val, int): #Getting the number of characters
                 #print(Val)
                 #Largest = max(Val)
                 if int(Val) > Largest:
                     Largest = Val
-                    if 
+                    
+
+
+    
                     
     
     print(Largest)
-
+    def FindKey(Dictionary, TargetInt):
+        if not isinstance(TargetInt, int):
+            return
         
+        MatchingKeys = [
+            key for key, value in Dictionary.items()
+            if isinstance(value, (list, tuple)) and len(value) >= 2 and isinstance(value[1], int) and value[1] == TargetInt
+        ]
+
+        return MatchingKeys
+    
+
+    result = FindKey(WordLengthData, Largest)
+    if result:
+        IntIndex = result[0]
+        print(f"The longest word is {WordLengthData[IntIndex]} characters long")
+        return
+        
+
+
 
 def StartInput():
     print("\nWelcome to the longest word finder \n Type in a phrase")
