@@ -26,10 +26,20 @@ def MainGame():
     SecretCode = int(str(FirstDigit) + str(SecondDigit) + str(ThirdDigit) + str(FourthDigit))
     print("Type in a 4 digit guess to the secretCode")
     UserInput = input()
-
+    
+    DigitValue = 0
     if not UserInput.isdigit():
         print("Try again you need to type in a digit")
         MainGame()
         return
-    
+    for i in UserInput:
+        DigitValue += 1
+    if DigitValue != 4:
+        print("You need to have a 4 digit guess in your input, please try again")
+        MainGame()
+        return
+
+
+
+
 MainGame()
