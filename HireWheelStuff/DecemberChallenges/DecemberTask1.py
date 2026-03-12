@@ -25,7 +25,7 @@ then add elements to it
     for Letters in SecondWord:
         IndividualLetters.append(Letters)
 
-Will the initial definition of the empty list make index 0 (the first index) of the list equal to []
+In python Will the initial definition of the empty list make index 0 (the first index) of the list equal to []
  how come it's not equal to the first element added to the list
 
  because when I try to print 
