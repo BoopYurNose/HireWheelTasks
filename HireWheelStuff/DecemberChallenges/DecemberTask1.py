@@ -39,7 +39,7 @@ simplier solution, I don't even need to iterate through the list index for the s
 simply an "if in" statement, I don't know why I didn't think about this earlier, but it works now,
 '''
 
-
+import string
 
 def CheckAnagram(FirstWord, SecondWord):
     FirstWordLetterAmount = len(FirstWord)
@@ -64,6 +64,9 @@ def CheckAnagram(FirstWord, SecondWord):
 
             if i == (FirstWordLetterAmount + 1):
                 print("The strings are anagrams")
+                return
+    print("The strings are not anagrams")
+    return
     
 
 
@@ -79,6 +82,10 @@ def StartGame():
             print("\n Try again you need to type in an actual word, with characters in it, no numbers")
             StartGame()
             return
+        elif Letters in string.punctuation:
+            print("\n Try again you need to have a word without any punctuation")
+            StartGame()
+            return
         
     SecondWord = input("\n Please input your second word: ")
 
@@ -87,12 +94,16 @@ def StartGame():
             print("\n Try again you need to type in an actual word, with characters in it, no numbers")
             StartGame()
             return
+        elif Letters in string.punctuation:
+            print("\n Try again you need to have a word without any punctuation")
+            StartGame()
+            return
 
         
     # NOTE: make it remove spaces, punctiation, etc before passing it as a function arguement
     # do this later, for now, just manually not input any of those listed
 
-    CheckAnagram(FirstWord, SecondWord)
+    CheckAnagram(FirstWord.lower(), SecondWord.lower())
         
     
     
