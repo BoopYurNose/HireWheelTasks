@@ -25,7 +25,7 @@ then add elements to it
     for Letters in SecondWord:
         IndividualLetters.append(Letters)
 
-In python Will the initial definition of the empty list make index 0 (the first index) of the list equal to []
+Question to ask later: In python Will the initial definition of the empty list make index 0 (the first index) of the list equal to []
  how come it's not equal to the first element added to the list
 
  because when I try to print 
@@ -33,7 +33,13 @@ In python Will the initial definition of the empty list make index 0 (the first 
 
  shouldn't it just print the first element added to the list?
  and not [], why does that happen?
+
+I realized even my "less overcomplicated way" of doing it, will not work, I could technically get it to work, but I realized there's a much
+simplier solution, I don't even need to iterate through the list index for the second word, I simply just need to do a if FirstWordLetters in SecondWordLetters:
+simply an "if in" statement, I don't know why I didn't think about this earlier, but it works now,
 '''
+
+
 
 def CheckAnagram(FirstWord, SecondWord):
     FirstWordLetterAmount = len(FirstWord)
@@ -42,18 +48,22 @@ def CheckAnagram(FirstWord, SecondWord):
     for Letters in SecondWord:
         IndividualLetters.append(Letters)
 
-    print(IndividualLetters)
+    #print(IndividualLetters)
 
     IntCharacterValue = (len(IndividualLetters))
     i = 1
-    print(IndividualLetters[0:1])
+    #print(IndividualLetters[0:1])
 
     if FirstWordLetterAmount == IntCharacterValue:
         print("both have same length of characters")
         for CharacterLetters in FirstWord:
-            if CharacterLetters == IndividualLetters[0:i]:
-                print(f"First Word {CharacterLetters} match")
+            print(CharacterLetters)
+            if CharacterLetters in (IndividualLetters):
+                print(f"Word {CharacterLetters} match")
                 i += 1
+
+            if i == (FirstWordLetterAmount + 1):
+                print("The strings are anagrams")
     
 
 
