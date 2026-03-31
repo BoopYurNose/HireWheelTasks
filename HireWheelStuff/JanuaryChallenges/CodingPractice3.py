@@ -10,15 +10,20 @@ Output total words and unique word count.'''
 import string
 
 def UniqueWordChecker(SentenceInput):
-    TotalWords = 1 #initually 1 word because it increments this based on spaces so the first word in the sentence
-    # isn't counted because there isn't a space before it, so this defaults at 1 word, if there are no spaces (no other words)
-    #in the sentence it'll just stay at 1 word
+    FirstWordChar = 0
+    FirstWord = []
 
-    for Characters in SentenceInput:
-        if Characters == " ":
-            TotalWords += 1
-    
-    print(f"There are {TotalWords} in this sentence")
+    for LettersFirst in SentenceInput:
+        FirstWordChar += 1
+        FirstWord.append(LettersFirst)
+        if LettersFirst == " ":
+
+            break
+
+        FirstWord = "".join(FirstWord)
+
+    print(f"First word has {FirstWordChar} characters")
+    print(FirstWord)
 
 
 def UserStart():
@@ -42,7 +47,7 @@ def UserStart():
             return
         
     # Figure out how to remove punctation from the sentence
-    print(UserSentence)
+    print(UserSentence.split())
 
     UniqueWordChecker(UserSentence)
     
