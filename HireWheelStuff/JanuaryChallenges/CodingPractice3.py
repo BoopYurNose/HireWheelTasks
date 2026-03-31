@@ -11,19 +11,28 @@ import string
 
 def UniqueWordChecker(SentenceInput):
     FirstWordChar = 0
+    TotalWords = 1
     FirstWord = []
 
-    for LettersFirst in SentenceInput:
-        FirstWordChar += 1
-        FirstWord.append(LettersFirst)
-        if LettersFirst == " ":
+    # checks how many words there are overall
+    for AllCharacters in SentenceInput:
+        if AllCharacters == " ":
+            TotalWords += 1
 
+
+    # I'm gonna take a break from this, make some sorta system where it iterates over each word depending on how many words there are which we checked by checking all the spaces
+    # figure out how to all this in a single loop
+    for FirstLetters in SentenceInput:
+        if FirstLetters.isalnum():
+            FirstWord.append(FirstLetters)
+
+        if FirstWord == " " or not FirstLetters.isalnum():
             break
 
-        FirstWord = "".join(FirstWord)
-
-    print(f"First word has {FirstWordChar} characters")
+    
+    FirstWord = "".join(FirstWord)
     print(FirstWord)
+
 
 
 def UserStart():
@@ -45,11 +54,9 @@ def UserStart():
             print("You cannot have any numbers in the sentence Try again: \n")
             UserStart()
             return
-        
-    # Figure out how to remove punctation from the sentence
-    print(UserSentence.split())
 
-    UniqueWordChecker(UserSentence)
+
+    UniqueWordChecker(UserSentence.lower())
     
 
 
