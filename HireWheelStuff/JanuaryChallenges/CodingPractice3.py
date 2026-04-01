@@ -10,28 +10,27 @@ Output total words and unique word count.'''
 import string
 
 def UniqueWordChecker(SentenceInput):
-    FirstWordChar = 0
-    TotalWords = 1
-    FirstWord = []
 
-    # checks how many words there are overall
-    for AllCharacters in SentenceInput:
-        if AllCharacters == " ":
-            TotalWords += 1
+    TotalWords = len(SentenceInput.split())
+    Words = []
+    print(TotalWords)
 
 
     # I'm gonna take a break from this, make some sorta system where it iterates over each word depending on how many words there are which we checked by checking all the spaces
     # figure out how to all this in a single loop
-    for FirstLetters in SentenceInput:
-        if FirstLetters.isalnum():
-            FirstWord.append(FirstLetters)
+    for i in range(0, TotalWords):
+        for FirstLetters in SentenceInput:
+            if FirstLetters.isalnum():
+                Words.append(FirstLetters)
 
-        if FirstWord == " " or not FirstLetters.isalnum():
-            break
+            if Words == " " or not FirstLetters.isalnum():
+                Words.append(", ")
+                break
+    
 
     
-    FirstWord = "".join(FirstWord)
-    print(FirstWord)
+    Words = "".join(Words)
+    print(Words)
 
 
 
