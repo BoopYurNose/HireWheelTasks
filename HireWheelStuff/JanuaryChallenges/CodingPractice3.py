@@ -19,17 +19,25 @@ def UniqueWordChecker(SentenceInput):
     # I'm gonna take a break from this, make some sorta system where it iterates over each word depending on how many words there are which we checked by checking all the spaces
     # figure out how to all this in a single loop
     for i in range(0, TotalWords):
-        for FirstLetters in SentenceInput:
-            if FirstLetters.isalnum():
-                Words.append(FirstLetters)
+        i += 1
+        Words.append({i: ""})
+        print(Words)
 
-            if Words == " " or not FirstLetters.isalnum():
-                Words.append(", ")
-                break
+    i = 1
+    for FirstLetters in SentenceInput:
+        if FirstLetters.isalnum():
+            print(FirstLetters)
+            Words[i].append(FirstLetters)
+            #Words[i] += str(FirstLetters)
+            # figure out how to append words for each specific dictionary word
+
+        '''if Words == " " or not FirstLetters.isalnum():
+            Words.append(", ")
+            break'''
     
 
     
-    Words = "".join(Words)
+    #Words = "".join(Words)
     print(Words)
 
 
