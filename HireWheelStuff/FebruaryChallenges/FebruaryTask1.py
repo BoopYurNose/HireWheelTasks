@@ -20,7 +20,7 @@ def PasswordBuilder(CharacterAmount, Capitalize, AllowNumbers):
     AllowAllCharacters = string.ascii_letters + string.digits
     ActualWord = []
     
-    for i in range(1, CharacterAmount):
+    for i in range(0, CharacterAmount):
         if Capitalize == True:
             if AllowNumbers == True:
                 #print("".join(random.choices(AllowAllCharacters, k = 1)))
@@ -71,7 +71,7 @@ def Main():
         return
     
     NumbersPermitted = False
-    AllowNumbers = input("Would you like to allow special characters? (y/n): ")
+    AllowNumbers = input("Would you like to allow number characters? (y/n): ")
     
     if AllowNumbers == "y" or AllowNumbers == "n":
         if AllowNumbers == "y":
