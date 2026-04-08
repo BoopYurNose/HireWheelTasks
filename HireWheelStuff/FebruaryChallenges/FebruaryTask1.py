@@ -18,20 +18,28 @@ def PasswordBuilder(CharacterAmount, Capitalize, AllowNumbers):
 
     OnlyCharactersAllowsUpper = string.ascii_letters
     AllowAllCharacters = string.ascii_letters + string.digits
-
+    ActualWord = []
     
     for i in range(1, CharacterAmount):
         if Capitalize == True:
             if AllowNumbers == True:
-                print("".join(random.choices(AllowAllCharacters, k = 1)))
+                #print("".join(random.choices(AllowAllCharacters, k = 1)))
+                ActualWord.append("".join(random.choices(AllowAllCharacters, k = 1)))
             else:
-                print("".join(random.choices(OnlyCharactersAllowsUpper, k = 1)))
+                #print("".join(random.choices(OnlyCharactersAllowsUpper, k = 1)))
+                ActualWord.append("".join(random.choices(OnlyCharactersAllowsUpper, k = 1)))
         else:
             if AllowNumbers == True:
-                print("".join(random.choices(OnlyCharactersLowerNumbers, k = 1)))
+                #print("".join(random.choices(OnlyCharactersLowerNumbers, k = 1)))
+                ActualWord.append("".join(random.choices(OnlyCharactersLowerNumbers, k = 1)))
             else:
-                print("".join(random.choices(OnlyCharactersLower, k = 1)))
+                #print("".join(random.choices(OnlyCharactersLower, k = 1)))
+                ActualWord.append("".join(random.choices(OnlyCharactersLower, k = 1)))
         #print("".join(random.choices(Characters, k = 1)))
+
+    ActualWord = "".join(ActualWord)
+    print(ActualWord)
+    return
 
         
 
