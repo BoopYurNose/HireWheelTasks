@@ -7,20 +7,30 @@ A --> D
 shifting it 3 positions to the left to encrypt the message
 Another example is 
 ABC --> DEF'''
-
+import string
 
 
 def CaesarCipher(Message, UserChoice):
-    print(Message, UserChoice)
+    Alphabet = []
+    Alphabet.append(string.ascii_lowercase) # NOTE: figure out how to get these to be seperated in a list like this
+    # ["a", "b", "c"] and so on for the entire alphabet, so you can loop through the entire alphabet and move every position
+    # of the users inputted word so we can index 3 characters forward in the alphabet to get the caesar cipher working
+    # once you figure that out, (it's probably a simple string method) it will be really easy to do the rest just make sure to do that
+
     if UserChoice == "encrypt":
-        print("encrypt")
+        print(Alphabet)
         pass # encrypt message here
     elif UserChoice == "decrypt":
+        print(Alphabet)
         print("decrypt")
         pass # decrypt a message here
     else:
         print("for some reason the users choice was not passed here, if this happens, this is an issue with my code")
     return
+
+
+
+
 
 def InputValidator(Input, Choice):
     if not Input.strip():
