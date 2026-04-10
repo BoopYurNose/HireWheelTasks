@@ -10,8 +10,19 @@ ABC --> DEF'''
 
 
 
+def CaesarCipher(Message, UserChoice):
+    print(Message, UserChoice)
+    if UserChoice == "encrypt":
+        print("encrypt")
+        pass # encrypt message here
+    elif UserChoice == "decrypt":
+        print("decrypt")
+        pass # decrypt a message here
+    else:
+        print("for some reason the users choice was not passed here, if this happens, this is an issue with my code")
+    return
 
-def InputValidator(Input):
+def InputValidator(Input, Choice):
     if not Input.strip():
         print("Try again you need to type in some word or some character: \n")
         Main()
@@ -22,6 +33,9 @@ def InputValidator(Input):
             return False
     
     #if users input is validated
+    CaesarCipher(Input, Choice)
+    return True
+
 
 
 
@@ -36,17 +50,23 @@ def Main():
         print("Try again, you need to type in a a valid input of only Encrypt or Decrypt \n")
         Main()
         return
+    
+    UserChoce = UserChoice.lower()
         
     if UserChoice.lower() == "encrypt":
         UserInput = input("Type in the message you would like to encrypt: ")
-        if not InputValidator(UserInput):
+        if not InputValidator(UserInput, UserChoice):
+            print("Try again you have invalid input \n")
             Main()
             return
+
     elif UserChoice.lower() == "decrypt":
         UserInput = input("Type in the message you would like to decrypt: ")
-        if not InputValidator(UserInput):
+        if not InputValidator(UserInput, UserChoice):
+            print("Try again you have invalid input \n")
             Main()
             return
+
 
 
 Main()
