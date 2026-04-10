@@ -12,21 +12,40 @@ import string
 
 def CaesarCipher(Message, UserChoice):
     Alphabet = []
-    Alphabet.append(string.ascii_lowercase) # NOTE: figure out how to get these to be seperated in a list like this
-    # ["a", "b", "c"] and so on for the entire alphabet, so you can loop through the entire alphabet and move every position
-    # of the users inputted word so we can index 3 characters forward in the alphabet to get the caesar cipher working
-    # once you figure that out, (it's probably a simple string method) it will be really easy to do the rest just make sure to do that
 
+    AlphabetVar = string.ascii_lowercase
+
+    for Letters in AlphabetVar:
+        Alphabet.append(Letters)
+
+    print(Alphabet)
+    FinalMessage = []
+
+    Iterator = -1
     if UserChoice == "encrypt":
-        print(Alphabet)
-        pass # encrypt message here
+        for Letters in Alphabet:
+            Iterator += 1
+            if Letters in Message:
+                FinalMessage.append("".join((Alphabet[Iterator + 3])))
+
+        FinalMessage = "".join(FinalMessage)
+        print(f"Here is your message encrypted in Ceasar Cipher: {FinalMessage}")
+        return
     elif UserChoice == "decrypt":
-        print(Alphabet)
-        print("decrypt")
-        pass # decrypt a message here
+        for Letters in Alphabet:
+            Iterator += 1
+            if Letters in Message:
+                FinalMessage.append("".join((Alphabet[Iterator - 3])))
+
+        FinalMessage = "".join(FinalMessage)
+        print(f"Here is your message decrypted in Ceasar Cipher: {FinalMessage}")
+        return
     else:
         print("for some reason the users choice was not passed here, if this happens, this is an issue with my code")
-    return
+        return
+
+    
+
 
 
 
