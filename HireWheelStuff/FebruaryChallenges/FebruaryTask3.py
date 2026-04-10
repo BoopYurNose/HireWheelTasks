@@ -1,7 +1,7 @@
 '''Caesar Cipher
 Encrypt or decrypt a message by shifting each letter by a fixed number of positions in the alphabet.'''
 
-'''How the Ceasar Cipher works
+'''NOTE: How the Ceasar Cipher works
 The Ceaser Cipher works by taking the position of a character in the alphabet for example
 A --> D
 shifting it 3 positions to the left to encrypt the message
